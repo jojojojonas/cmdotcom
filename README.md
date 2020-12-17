@@ -5,7 +5,7 @@ With this small library we wanted to build a fast way to send SMS, WhatsApp or V
 First you have to install the package:
 
 ```console
-go get github.com/jojojojonas/cmdotcom
+go get github.com/jojojojonas/cmdotcom-api
 ```
 
 ## How to use?
@@ -14,7 +14,7 @@ As already mentioned, you can send SMS relatively easy and get a reply about all
 You only need the token, the sender, the recipient, the message and the allowed channel.
 
 ```go
-send, err := cmdotcom.NewMessage(cmdotcom.Config{"TOKEN", "The Message", "Recipient number", "Sender", "SMS"})
+send, err := cmdotcom.NewMessage(cmdotcom.Config{"TOKEN", "The Message", []string{"Recipient number"}, "Sender", "SMS"})
 if err != nil {
     fmt.Println("The following error occurred while sending the message: ", err)
 }
