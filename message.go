@@ -17,7 +17,7 @@ import (
 type Config struct {
 	ProductToken    string
 	Content         string
-	Number          string
+	Number          []string
 	From            string
 	AllowedChannels string
 }
@@ -76,6 +76,17 @@ var (
 // To send a new message via the cm.com api
 func NewMessage(config Config) (ReturnData, error) {
 
+	// Save numbers
+	var to []To
+
+	// Check numbers
+	for _, value := range config.Number {
+
+		// Add number to slice
+		to = append(to, To{value})
+
+	}
+
 	// Create new message
 	message := Request{
 		Messages{
@@ -88,11 +99,7 @@ func NewMessage(config Config) (ReturnData, error) {
 						"auto",
 						config.Content,
 					},
-					[]To{
-						{
-							config.Number,
-						},
-					},
+					to,
 					config.From,
 					[]string{
 						config.AllowedChannels,
