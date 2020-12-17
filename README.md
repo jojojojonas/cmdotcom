@@ -5,7 +5,7 @@ With this small library we wanted to build a fast way to send SMS, WhatsApp or V
 First you have to install the package:
 
 ```console
-go get github.com/jojojojonas/cmdotcom-api
+go get github.com/jojojojonas/cmdotcom
 ```
 
 ## How to use?
