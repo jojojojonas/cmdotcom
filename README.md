@@ -14,9 +14,9 @@ As already mentioned, you can send SMS relatively easy and get a reply about all
 You only need the token, the sender, the recipient, the message and the allowed channel.
 
 ```go
-send, err := cmdotcom.NewMessage(cmdotcom.Config{"TOKEN", "The Message", []string{"Recipient number"}, "Sender", "SMS"})
+message, err := NewMessage(Config{"Message", []To{{"Number1"}}, "Sender", "SMS", "Token"})
 if err != nil {
-    fmt.Println("The following error occurred while sending the message: ", err)
+fmt.Println(err)
 }
 ```
 
