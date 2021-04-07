@@ -15,11 +15,11 @@ import (
 
 // Config for new message
 type Config struct {
-	ProductToken    string
 	Content         string
 	Number          []To
 	From            string
 	AllowedChannels string
+	ProductToken    string
 }
 
 // Structs for sending data in json
